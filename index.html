@@ -15,138 +15,148 @@
 <body>
     <row class="d-flex justify-content-center mt-3">
         <div class="col-11 col-lg-9 card">
-            <!-- HEADER -->
-            <div class="header bg-light px-4"><h1>Payment from example</h1></div>
-            <!-- BODY -->
-            <div class="body bg-white border-top border-bottom">
-                <!-- ALERT MISSING FIELDS -->
-                <div class="alert alert-danger m-3" role="alert">
-                    Some fields are missing.
-                </div>
+            <form action="" method="post mx-auto">
+                <!-- HEADER -->
+                <div class="header bg-light px-4"><h1>Payment from example</h1></div>
+                <!-- BODY -->
+                <div class="body bg-white border-top border-bottom">
+                    <!-- ALERT MISSING FIELDS -->
+                    <div class="alert alert-danger m-3" role="alert">
+                        Some fields are missing.
+                    </div>
 
-                <div class="row m-2 row-gap-2">
-                    <!-- CARD NUMBER -->
-                    <div class="card-input col-lg-5">
-                        <label for="cc-number" class="form-label">Card #</label>
-                        <input type="text" class="form-control" id="cc-number" placeholder="XXXX XXXX XXXX XXXX" required>
-                    </div>
-                    <!-- CVC -->
-                    <div class="cvc-input col-lg-3">
-                        <label for="cvc" class="form-label">CVC #</label>
-                        <input type="text" class="form-control" id="cvc" placeholder="000" required>
-                    </div>
-                    <!-- AMOUNT -->
-                    <div class="amount-input col-lg-4">
-                        <label for="amount" class="form-label">Amount</label>
-                        <div class="input-group d-flex align-items-center">
-                            <span class="input-group-text"><b>$</b></span>
-                            <input type="text" class="form-control" id="amount" placeholder="Amount" required>
+                    <div class="row m-2 row-gap-2">
+                        <!-- CARD NUMBER -->
+                        <div class="card-input col-lg-5">
+                            <label for="cc-number" class="form-label">Card #</label>
+                            <input type="text" class="form-control" id="cc-number" placeholder="XXXX XXXX XXXX XXXX"  maxlength="16" required>
                         </div>
-                    </div>
-                    <!-- NAME -->
-                    <div class="first-name-input col-lg-6">
-                        <label for="first-name" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="first-name" required>
-                    </div>
-                    <!-- LAST NAME -->
-                    <div class="last-name-input col-lg-6">
-                        <label for="last-name" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="last-name" required>
-                    </div>
-                    <!-- CITY -->
-                    <div class="city-input col-lg-6">
-                        <label for="city" class="form-label">City</label>
-                        <input type="text" class="form-control" id="city" required>
-                    </div>
-                    <!-- STATE -->
-                    <div class="state-input col-lg-3">
-                        <label for="select-state" class="form-label">State</label>
-                        <select class="form-select" aria-label="select-state-label" id="select-state">
-                            <option selected>Pick a state</option>
-                            <option value="1">Alabama</option>
-                            <option value="2">Alaska</option>
-                            <option value="3">Arizona</option>
-                            <option value="4">Arkansas</option>
-                            <option value="5">California</option>
-                            <option value="6">Colorado</option>
-                            <option value="7">Connecticut</option>
-                            <option value="8">Delaware</option>
-                            <option value="9">Florida</option>
-                            <option value="10">Georgia</option>
-                            <option value="11">Hawaii</option>
-                            <option value="12">Idaho</option>
-                            <option value="13">Illinois</option>
-                            <option value="14">Indiana</option>
-                            <option value="15">Iowa</option>
-                            <option value="16">Kansas</option>
-                            <option value="17">Kentucky</option>
-                            <option value="18">Louisiana</option>
-                            <option value="19">Maine</option>
-                            <option value="20">Maryland</option>
-                            <option value="21">Massachussets</option>
-                            <option value="22">Michigan</option>
-                            <option value="23">Minnesota</option>
-                            <option value="24">Mississippi</option>
-                            <option value="25">Missouri</option>
-                            <option value="26">Montana</option>
-                            <option value="27">Nebraska</option>
-                            <option value="28">Nevada</option>
-                            <option value="29">New Hampshire</option>
-                            <option value="30">New Jersey</option>
-                            <option value="31">New Mexico</option>
-                            <option value="32">New York</option>
-                            <option value="33">North Carolina</option>
-                            <option value="34">North Dakota</option>
-                            <option value="35">Ohio</option>
-                            <option value="36">Oklahoma</option>
-                            <option value="37">Oregon</option>
-                            <option value="38">Pennsylvania</option>
-                            <option value="39">Rhode Island</option>
-                            <option value="40">South Carolina</option>
-                            <option value="41">South Dakota</option>
-                            <option value="42">Tennessee</option>
-                            <option value="43">Texas</option>
-                            <option value="44">Utah</option>
-                            <option value="45">Vermont</option>
-                            <option value="46">Virginia</option>
-                            <option value="47">Washington</option>
-                            <option value="48">West Virginia</option>
-                            <option value="49">Wisconsin</option>
-                            <option value="50">Wyoming</option>
-                        </select>
-                    </div>
-                    <!-- POSTCODE -->
-                    <div class="postcode-input col-lg-3">
-                        <label for="postcode" class="form-label">Postcode</label>
-                        <input type="text" class="form-control" id="postcode" required>
-                    </div>
-                    <!-- CARD TYPE -->
-                    <div class="col-lg-6 col-md-8">
-                        <label class="form-label">We accept:</label>
-                        <div id="cc-type-group" class="bg-secondary col-lg-6 p-2 rounded d-flex">
-                            <div class="form-check form-check-inline col-6 d-flex align-items-center">
-                                <input class="form-check-inpu me-2" type="radio" name="cc-type" id="visa" value="visa">
-                                <label class="form-check-label fs-3 text-white" for="visa"><i class="fa-brands fa-cc-visa"></i></label>
-                            </div>
-                            <div class="form-check form-check-inline col-6 d-flex align-items-center">
-                                <input class="form-check-inpu me-2" type="radio" name="cc-type" id="mastercard" value="mastercard">
-                                <label class="form-check-label fs-3 text-white" for="mastercard"><i class="fa-brands fa-cc-mastercard"></i></label>
+                        <!-- CVC -->
+                        <div class="cvc-input col-lg-3">
+                            <label for="cvc" class="form-label">CVC #</label>
+                            <input type="text" class="form-control" id="cvc" placeholder="000" maxlength="3" required>
+                        </div>
+                        <!-- AMOUNT -->
+                        <div class="amount-input col-lg-4">
+                            <label for="amount" class="form-label">Amount</label>
+                            <div class="input-group d-flex align-items-center">
+                                <span class="input-group-text"><b>$</b></span>
+                                <input type="text" class="form-control" id="amount" placeholder="Amount" required>
                             </div>
                         </div>
-                    </div>
-                    <!-- MESSAGE -->
-                    <div class="col-lg-6">
-                        <label for="message-input" class="form-label">Messages</label>
-                        <textarea name="message" id="message-input" rows="3" class="form-control" aria-describedby="message-help"></textarea>
-                        <div id="message-help" class="form-text">Add any notes here.</div>
+                        <!-- NAME -->
+                        <div class="first-name-input col-lg-6">
+                            <label for="first-name" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="first-name" required>
+                        </div>
+                        <!-- LAST NAME -->
+                        <div class="last-name-input col-lg-6">
+                            <label for="last-name" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="last-name" required>
+                        </div>
+                        <!-- CITY -->
+                        <div class="city-input col-lg-6">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" class="form-control" id="city" required>
+                        </div>
+                        <!-- STATE -->
+                        <div class="state-input col-lg-3">
+                            <label for="select-state" class="form-label">State</label>
+                            <select class="form-select" aria-label="select-state-label" id="select-state" required="required">
+                                <option value="">Pick a state</option>
+                                <option value="1">Alabama</option>
+                                <option value="2">Alaska</option>
+                                <option value="3">Arizona</option>
+                                <option value="4">Arkansas</option>
+                                <option value="5">California</option>
+                                <option value="6">Colorado</option>
+                                <option value="7">Connecticut</option>
+                                <option value="8">Delaware</option>
+                                <option value="9">Florida</option>
+                                <option value="10">Georgia</option>
+                                <option value="11">Hawaii</option>
+                                <option value="12">Idaho</option>
+                                <option value="13">Illinois</option>
+                                <option value="14">Indiana</option>
+                                <option value="15">Iowa</option>
+                                <option value="16">Kansas</option>
+                                <option value="17">Kentucky</option>
+                                <option value="18">Louisiana</option>
+                                <option value="19">Maine</option>
+                                <option value="20">Maryland</option>
+                                <option value="21">Massachussets</option>
+                                <option value="22">Michigan</option>
+                                <option value="23">Minnesota</option>
+                                <option value="24">Mississippi</option>
+                                <option value="25">Missouri</option>
+                                <option value="26">Montana</option>
+                                <option value="27">Nebraska</option>
+                                <option value="28">Nevada</option>
+                                <option value="29">New Hampshire</option>
+                                <option value="30">New Jersey</option>
+                                <option value="31">New Mexico</option>
+                                <option value="32">New York</option>
+                                <option value="33">North Carolina</option>
+                                <option value="34">North Dakota</option>
+                                <option value="35">Ohio</option>
+                                <option value="36">Oklahoma</option>
+                                <option value="37">Oregon</option>
+                                <option value="38">Pennsylvania</option>
+                                <option value="39">Rhode Island</option>
+                                <option value="40">South Carolina</option>
+                                <option value="41">South Dakota</option>
+                                <option value="42">Tennessee</option>
+                                <option value="43">Texas</option>
+                                <option value="44">Utah</option>
+                                <option value="45">Vermont</option>
+                                <option value="46">Virginia</option>
+                                <option value="47">Washington</option>
+                                <option value="48">West Virginia</option>
+                                <option value="49">Wisconsin</option>
+                                <option value="50">Wyoming</option>
+                            </select>
+                        </div>
+                        <!-- POSTCODE -->
+                        <div class="postcode-input col-lg-3">
+                            <label for="postcode" class="form-label">Postcode</label>
+                            <input type="text" class="form-control" id="postcode" required>
+                        </div>
+                        <!-- CARD TYPE -->
+                        <div class="col-lg-6 col-md-8">
+                            <label class="form-label">We accept:</label>
+                            <div id="cc-type-group" class="row bg-secondary col-lg-6 p-2 rounded d-flex justify-content-center gap-2 ms-1">
+                                <div class="form-check form-check-inline col-2 d-flex align-items-center">
+                                    <input class="form-check-input me-2" type="radio" name="cc-type" id="mastercard" value="mastercard" required>
+                                    <label class="form-check-label fs-3 text-white" for="mastercard"><i class="fa-brands fa-cc-mastercard"></i></label>
+                                </div>
+                                <div class="form-check form-check-inline col-2 d-flex align-items-center">
+                                    <input class="form-check-input me-2" type="radio" name="cc-type" id="visa" value="visa">
+                                    <label class="form-check-label fs-3 text-white" for="visa"><i class="fa-brands fa-cc-visa"></i></label>
+                                </div>
+                                <div class="form-check form-check-inline col-2 d-flex align-items-center">
+                                    <input class="form-check-input me-2" type="radio" name="cc-type" id="diners-club" value="diners-club">
+                                    <label class="form-check-label fs-3 text-white" for="diners-club"><i class="fa-brands fa-cc-diners-club"></i></label>
+                                </div>
+                                <div class="form-check form-check-inline col-2 d-flex align-items-center">
+                                    <input class="form-check-input me-2" type="radio" name="cc-type" id="amex" value="amex">
+                                    <label class="form-check-label fs-3 text-white" for="amex"><i class="fa-brands fa-cc-amex"></i></label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- MESSAGE -->
+                        <div class="col-lg-6">
+                            <label for="message-input" class="form-label">Messages</label>
+                            <textarea name="message" id="message-input" rows="3" class="form-control" aria-describedby="message-help"></textarea>
+                            <div id="message-help" class="form-text">Add any notes here.</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- FOOTER -->
-            <div class="footer bg-light d-flex justify-content-end px-4 py-2 gap-3">
-                <button class="btn btn-secondary">Cancel</button>
-                <button class="btn btn-primary">Send</button>
-            </div>
+                <!-- FOOTER -->
+                <div class="footer bg-light d-flex justify-content-end px-4 py-2 gap-3">
+                    <button class="btn btn-secondary">Cancel</button>
+                    <button class="btn btn-primary" type="submit">Send</button>
+                </div>
+            </form>
         </card>
     </row>
 </body>
