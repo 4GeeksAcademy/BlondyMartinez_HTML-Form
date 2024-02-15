@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
@@ -29,12 +31,12 @@
                         <!-- CARD NUMBER -->
                         <div class="card-input col-lg-5">
                             <label for="cc-number" class="form-label">Card #</label>
-                            <input type="text" class="form-control" id="cc-number" placeholder="XXXX XXXX XXXX XXXX"  maxlength="16" required>
+                            <input type="number" class="form-control" id="cc-number" placeholder="XXXX XXXX XXXX XXXX" required>
                         </div>
                         <!-- CVC -->
                         <div class="cvc-input col-lg-3">
                             <label for="cvc" class="form-label">CVC #</label>
-                            <input type="text" class="form-control" id="cvc" placeholder="000" maxlength="3" required>
+                            <input type="number" class="form-control" id="cvc" placeholder="0000" required>
                         </div>
                         <!-- AMOUNT -->
                         <div class="amount-input col-lg-4">
@@ -119,7 +121,7 @@
                         <!-- POSTCODE -->
                         <div class="postcode-input col-lg-3">
                             <label for="postcode" class="form-label">Postcode</label>
-                            <input type="text" class="form-control" id="postcode" required>
+                            <input type="number" class="form-control" id="postcode" required>
                         </div>
                         <!-- CARD TYPE -->
                         <div class="col-lg-6 col-md-8">
