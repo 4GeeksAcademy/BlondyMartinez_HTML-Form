@@ -17,21 +17,21 @@
 <body>
     <row class="d-flex justify-content-center mt-3">
         <div class="col-11 col-lg-9 card">
-             <!-- HEADER -->
-             <div class="header bg-light px-4">
+            <!-- HEADER -->
+            <div class="header bg-light px-4">
                 <h1>Payment from example</h1>
             </div>
-            
-            <form action="" method="post mx-auto">
-                <!-- BODY -->
-                <div class="body bg-white border-top border-bottom">
-                    
-                    <!-- ALERT MISSING FIELDS -->
-                    <div class="alert alert-danger m-3 d-none" role="alert" id="alert">
-                        Some fields are missing.
-                    </div>
+            <!-- BODY -->
+            <div class="body bg-white border-top border-bottom">
 
+                <!-- ALERT MISSING FIELDS -->
+                <div class="alert alert-danger m-3" role="alert" id="alert">
+                    Some fields are missing.
+                </div>
+                
+                <form action="" id="form" method="post" onsubmit="return validateForm()" novalidate>
                     <div class="row m-2 row-gap-2">
+                            
                         <!-- CARD NUMBER -->
                         <div class="card-input col-lg-5">
                             <label for="cc-number" class="form-label">Card #</label>
@@ -138,7 +138,7 @@
                         <!-- CARD TYPE -->
                         <div class="col-lg-6">
                             <label class="form-label">We accept:</label>
-                            <div id="cc-type-group" class="row bg-secondary col-lg-8 cold-md-10 p-2 rounded d-flex justify-content-center gap-2 ms-1">
+                            <div id="cc-type-group" class="bg-secondary col-lg-8 cold-md-10 p-2 rounded d-flex justify-content-center gap-2 ms-1">
                                 <div class="form-check form-check-inline col-2 d-flex align-items-center">
                                     <input class="form-check-input me-2" type="radio" name="cc-type" id="mastercard" value="mastercard" required>
                                     <label class="form-check-label fs-3 text-white" for="mastercard"><i class="fa-brands fa-cc-mastercard"></i></label>
@@ -166,7 +166,7 @@
                         </div>
                     </div>
                 </div>
-                
+                    
                 <!-- FOOTER -->
                 <div class="footer bg-light d-flex justify-content-end px-4 py-2 gap-3">
                     <button class="btn btn-secondary">Cancel</button>
