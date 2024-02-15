@@ -1,3 +1,13 @@
+// global variables
+let emptyFieldCount = 0;
+let shortFieldCount = 0;
+
+let inputs = document.querySelectorAll("input");
+
+let submissionAlert = document.getElementById("alert");
+submissionAlert.classList.add("d-none");
+
+// used so only numbers are allowed in the input
 function onlyAllowNum(inputID) {
   let inputElement = document.getElementById(inputID);
 
@@ -7,6 +17,7 @@ function onlyAllowNum(inputID) {
   });
 }
 
+// used so only letters are allowed in the input
 function onlyAllowLetters(inputID) {
   let inputElement = document.getElementById(inputID);
 
@@ -16,6 +27,7 @@ function onlyAllowLetters(inputID) {
   });
 }
 
+// formats credit card number
 function addSpacesToCCNumber() {
   let inputElement = document.getElementById("cc-number");
   inputElement.addEventListener("input", function () {
@@ -24,6 +36,7 @@ function addSpacesToCCNumber() {
   });
 }
 
+// adds all event listeners
 document.addEventListener("DOMContentLoaded", function () {
   onlyAllowNum("cc-number");
   onlyAllowNum("cvc");
@@ -37,29 +50,25 @@ document.addEventListener("DOMContentLoaded", function () {
   addSpacesToCCNumber();
 });
 
+// validates form
 document.getElementById("form").addEventListener("submit", function (event) {
   event.preventDefault();
   validateForm();
 });
 
-// global variables
-let emptyFieldCount = 0;
-let shortFieldCount = 0;
-
-let inputs = document.querySelectorAll("input");
-
-let submissionAlert = document.getElementById("alert");
-submissionAlert.classList.add("d-none");
-
+// validates form
 function validateForm() {
+  //reset counters
   emptyFieldCount = 0;
   shortFieldCount = 0;
 
+  // loop over each input and checks if empty or short
   for (let input of inputs) {
     emptyFieldCount += isFieldEmpty(input);
     shortFieldCount += isShort(input);
   }
 
+  // set and display alert
   if (emptyFieldCount != 0 && shortFieldCount != 0) displayAlert(3);
   else if (emptyFieldCount == 0 && shortFieldCount != 0) displayAlert(2);
   else if (emptyFieldCount != 0 && shortFieldCount == 0) displayAlert(1);
@@ -71,17 +80,20 @@ function validateForm() {
   return false;
 }
 
+// checks if empty
 function isFieldEmpty(input) {
   if (input.value === "") return 1;
   else return 0;
 }
 
+// check if short
 function isShort(input) {
   if (input.hasAttribute("maxlength") && input.value.length !== input.maxLength)
     return 1;
   else return 0;
 }
 
+// displays alert based in the given index
 function displayAlert(index) {
   switch (index) {
     case 0: // valid form
@@ -121,6 +133,5 @@ function displayAlert(index) {
       break;
   }
 
-  console.log(index);
   submissionAlert.classList.remove("d-none");
 }
