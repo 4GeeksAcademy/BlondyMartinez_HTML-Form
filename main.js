@@ -2,7 +2,7 @@
 let emptyFieldCount = 0;
 let shortFieldCount = 0;
 
-let inputs = document.querySelectorAll("input");
+let inputs = document.querySelectorAll("input, select");
 
 let submissionAlert = document.getElementById("alert");
 submissionAlert.classList.add("d-none");
@@ -66,6 +66,14 @@ function validateForm() {
   for (let input of inputs) {
     emptyFieldCount += isFieldEmpty(input);
     shortFieldCount += isShort(input);
+
+    if (isFieldEmpty(input) == 1 || isShort(input) == 1) {
+      input.classList.add("is-invalid");
+      input.classList.remove("is-valid");
+    } else {
+      input.classList.add("is-valid");
+      input.classList.remove("is-invalid");
+    }
   }
 
   // set and display alert
