@@ -1,14 +1,24 @@
-function limitNumericInputLength(inputID, maxLength) {
-    var inputElement = document.getElementById(inputID);
+function onlyAllowNum(inputID) {
+    let inputElement = document.getElementById(inputID);
 
     inputElement.addEventListener('input', function() {
+        // removes non-numeric char
         this.value = this.value.replace(/\D/g,'');
-        if (this.value.length > maxLength) this.value = this.value.slice(0, maxLength);
+    });
+}
+
+function addSpacesToCCNumber(){
+    let inputElement = document.getElementById('cc-number');
+    inputElement.addEventListener('input', function() {
+        // adds a space after every 4 char
+        this.value = this.value.replace(/(\d{4})(?=\d)/g, '$1 ');
     });
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    limitNumericInputLength('cc-number', 16);
-    limitNumericInputLength('cvc', 4);
-    limitNumericInputLength('postcode', 5);
+    onlyAllowNum('cc-number');
+    onlyAllowNum('cvc');
+    onlyAllowNum('postcode');
+    onlyAllowNum('amount');
+    addSpacesToCCNumber();
 });

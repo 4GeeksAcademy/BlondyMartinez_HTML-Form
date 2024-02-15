@@ -25,7 +25,7 @@
                 <div class="body bg-white border-top border-bottom">
                     
                     <!-- ALERT MISSING FIELDS -->
-                    <div class="alert alert-danger m-3" role="alert">
+                    <div class="alert alert-danger m-3 d-none" role="alert">
                         Some fields are missing.
                     </div>
 
@@ -33,13 +33,13 @@
                         <!-- CARD NUMBER -->
                         <div class="card-input col-lg-5">
                             <label for="cc-number" class="form-label">Card #</label>
-                            <input type="number" class="form-control" id="cc-number" placeholder="XXXX XXXX XXXX XXXX" required>
+                            <input type="text" class="form-control" id="cc-number" maxlength="19" placeholder="XXXX XXXX XXXX XXXX" required>
                         </div>
 
                         <!-- CVC -->
                         <div class="cvc-input col-lg-3">
                             <label for="cvc" class="form-label">CVC #</label>
-                            <input type="number" class="form-control" id="cvc" placeholder="0000" required>
+                            <input type="text" class="form-control" id="cvc" maxlength="4" placeholder="0000" required>
                         </div>
 
                         <!-- AMOUNT -->
@@ -47,7 +47,7 @@
                             <label for="amount" class="form-label">Amount</label>
                             <div class="input-group d-flex align-items-center">
                                 <span class="input-group-text"><b>$</b></span>
-                                <input type="text" class="form-control" id="amount" placeholder="Amount" required>
+                                <input type="number" class="form-control" id="amount" placeholder="Amount" required>
                             </div>
                         </div>
 
@@ -130,13 +130,13 @@
                         <!-- POSTCODE -->
                         <div class="postcode-input col-lg-3">
                             <label for="postcode" class="form-label">Postcode</label>
-                            <input type="number" class="form-control" id="postcode" required>
+                            <input type="number" class="form-control" id="postcode" maxlength="5" required>
                         </div>
 
                         <!-- CARD TYPE -->
-                        <div class="col-lg-6 col-md-8">
+                        <div class="col-lg-6">
                             <label class="form-label">We accept:</label>
-                            <div id="cc-type-group" class="row bg-secondary col-lg-6 p-2 rounded d-flex justify-content-center gap-2 ms-1">
+                            <div id="cc-type-group" class="row bg-secondary col-lg-8 cold-md-10 p-2 rounded d-flex justify-content-center gap-2 ms-1">
                                 <div class="form-check form-check-inline col-2 d-flex align-items-center">
                                     <input class="form-check-input me-2" type="radio" name="cc-type" id="mastercard" value="mastercard" required>
                                     <label class="form-check-label fs-3 text-white" for="mastercard"><i class="fa-brands fa-cc-mastercard"></i></label>
