@@ -11,7 +11,7 @@ function onlyAllowLetters(inputID) {
   let inputElement = document.getElementById(inputID);
 
   inputElement.addEventListener('input', function() {
-      // removes non-numeric char
+      // removes non-alpha char
       this.value = this.value.replace(/[^a-zA-Z]/g,'');
   });
 }
