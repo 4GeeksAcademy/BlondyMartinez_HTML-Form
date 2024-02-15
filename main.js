@@ -101,7 +101,7 @@ function isShort(input) {
   else return 0;
 }
 
-// displays alert based in the given index
+// displays alert based on the given index
 function displayAlert(index) {
   switch (index) {
     case 0: // valid form
