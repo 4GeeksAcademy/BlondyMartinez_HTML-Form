@@ -17,15 +17,17 @@
 <body>
     <row class="d-flex justify-content-center mt-3">
         <div class="col-11 col-lg-9 card">
-            <form action="" method="post mx-auto">
+            <form class="needs-validation" novalidate action="" method="post mx-auto">
                 <!-- HEADER -->
-                <div class="header bg-light px-4"><h1>Payment from example</h1></div>
+                <div class="header bg-light px-4">
+                    <h1>Payment from example</h1>
+                </div>
 
                 <!-- BODY -->
                 <div class="body bg-white border-top border-bottom">
                     
                     <!-- ALERT MISSING FIELDS -->
-                    <div class="alert alert-danger m-3 d-none" role="alert">
+                    <div class="alert alert-danger m-3 d-none" role="alert" id="alert">
                         Some fields are missing.
                     </div>
 
@@ -130,7 +132,7 @@
                         <!-- POSTCODE -->
                         <div class="postcode-input col-lg-3">
                             <label for="postcode" class="form-label">Postcode</label>
-                            <input type="number" class="form-control" id="postcode" maxlength="5" required>
+                            <input type="text" class="form-control" id="postcode" maxlength="5" required>
                         </div>
 
                         <!-- CARD TYPE -->
